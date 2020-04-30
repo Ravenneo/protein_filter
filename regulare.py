@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Autor: Jose Jesus Gallego-Parrilla, March 2020, Newcastle upon Tyne, UK.
 
 def countWords(address, word):
     logfile = open(address, "r")
