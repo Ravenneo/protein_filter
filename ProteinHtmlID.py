@@ -26,7 +26,7 @@ class ProteinHtmlID:
     return self.__fileName
 
   def searchProtein(self, proteinName):
-    regexBegin = "<tr style = \"background:#[\w\d]+\"><td>WP_[\d]+\.1<\/td><td colspan = 5>.*Tat\s.*(.*"
+    regexBegin = "<tr style = \"background:#[\w\d]+\"><td>WP_[\d]+\.1<\/td><td colspan = 5>.*dehydrogenase(.*"
     regexEnd = ".*)<\/td><\/tr>"
     regex = regexBegin + proteinName + regexEnd
     count = sum(1 for match in re.finditer(r"{}".format(regex),
@@ -35,7 +35,7 @@ class ProteinHtmlID:
 
   def findAllProteinNames(self):
     allProteins = {}
-    regex = "<tr style = \"background:#[\w\d]+\"><td>(WP_[\d]+\.1)<\/td><td colspan = 5>(.*Tat\s.*)<\/td><\/tr>" 
+    regex = "<tr style = \"background:#[\w\d]+\"><td>(WP_[\d]+\.1)<\/td><td colspan = 5>.*dehydrogenase.*.*<\/td><\/tr>"
     for match in re.finditer(r"{}".format(regex), self.__contentFile):
       protein = match.group(1)
       if (protein in allProteins):
@@ -43,5 +43,4 @@ class ProteinHtmlID:
       else:
         allProteins.update({protein: 1})
     return allProteins
-
 

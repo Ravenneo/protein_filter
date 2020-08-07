@@ -40,18 +40,18 @@ elif answer== 2:
     found = wp_num.findAllProteinNames()
     
     #prot_name = []
-    places = []
+    #places = []
     wp_num = []
     
     for elem in found:
       #prot_name.append(elem)
       wp_num.append(elem)
-      places.append(found[elem])
+      #places.append(found[elem])
       
     
-    #data = {'Name' : prot_name, 'Place' : places, 'ID' : wp_num}
-    data = {'Place' : places, 'ID' : wp_num}
+    data = {'ID' : wp_num}
     dataframe = pd.DataFrame(data)
     df = pd.DataFrame(data)
-    df.to_csv('Tat_related.csv', index=False) #name for exported document
+    input_console = input("Put name of the file finished in .csv:\n")
+    df.to_csv(input_console, index=False) #name for exported document
     print(dataframe)
