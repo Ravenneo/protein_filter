@@ -52,6 +52,6 @@ elif answer== 2:
     data = {'ID' : wp_num}
     dataframe = pd.DataFrame(data)
     df = pd.DataFrame(data)
-    input_console = input("Put name of the file finished in .csv:\n")
+    input_console = input("Give the file a name that ends in .csv:\n")
     df.to_csv(input_console, index=False) #name for exported document
     print(dataframe)
